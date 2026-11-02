@@ -1,24 +1,27 @@
 {
-  "name": "book-writing",
-  "version": "1.0.0",
-  "description": "Claude Code plugin: write a full-length reference or instructional book with teams of subagents. Definition, planning, research, parallel chapter drafting, review, graphics and publication — organised so no single agent is ever given a task large enough to degrade. Authorship only; print geometry hands off to kdp-publishing.",
+  "name": "long-form-content",
+  "version": "2.0",
+  "description": "Claude Code plugin: produce long-form content (books, research reports, screenplays and audiobooks) with teams of subagents. Definition, planning, research, parallel unit drafting, review (including a seam reviewer for the joins between units), then a production stage per type: typeset-and-handoff, PDF export, Fountain, or spoken script, per-chapter TTS and a chaptered m4b. Organised so no single agent is ever given a task large enough to degrade. Successor to book-writing.",
   "author": {
     "name": "Daniel Rosehill",
     "email": "public@danielrosehill.com",
     "url": "https://danielrosehill.com"
   },
-  "repository": "https://github.com/danielrosehill/Claude-Book-Writing-Plugin",
+  "repository": "https://github.com/danielrosehill/Long-Form-Content-Plugin",
   "license": "MIT",
   "keywords": [
+    "long-form",
     "book",
+    "report",
+    "screenplay",
+    "audiobook",
+    "tts",
     "writing",
-    "longform",
     "subagents",
     "context-management",
-    "reference-book",
-    "technical-writing",
+    "continuity",
     "self-publishing",
-    "print-on-demand",
-    "typst"
+    "typst",
+    "fountain"
   ]
 }

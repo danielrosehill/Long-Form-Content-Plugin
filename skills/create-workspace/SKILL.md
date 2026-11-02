@@ -1,18 +1,19 @@
 ---
 name: create-workspace
-description: Create a new book project workspace from the Claude-Book-Workspace-Template repository, or scaffold one locally. Use when starting a new book, or when the user asks to set up a book project.
+description: Create a new long-form project workspace (book, report, screenplay or audiobook) from the Long-Form-Content-Workspace-Template repository, or scaffold one locally. Use when starting a new long-form project.
 ---
 
-# Creating a book workspace
+# Creating a long-form workspace
 
-A book project lives in its own repository, instantiated from the template. It is
+A long-form project lives in its own repository, instantiated from the template. It is
 separate from this plugin because the two run on different clocks: the plugin is
-replaced wholesale on `/plugin update`, and a book project lives for months and
+replaced wholesale on `/plugin update`, and a project lives for months and
 diverges from the template forever.
 
 ## 1. Establish what is being made
 
-Ask only what you cannot infer: a project name, and whether there is existing
+Ask only what you cannot infer: a project name, the output type (book, report,
+screenplay, audiobook; usually obvious from the request), and whether there is existing
 material here to build from. Glob for `manuscript/`, `chapters/`, `*.md` before
 asking — if the user is standing in a directory of notes, say so.
 
@@ -25,7 +26,7 @@ Creating a repository is outward-facing. Show the exact command and state what
 the repository will hold, so a `--public` choice is made knowingly:
 
 ```bash
-gh repo create <name> --template danielrosehill/Claude-Book-Workspace-Template --private --clone
+gh repo create <name> --template danielrosehill/Long-Form-Content-Workspace-Template --private --clone
 ```
 
 **Private by default.** A book in progress usually should be. Ask; do not infer
@@ -40,21 +41,24 @@ directory and `git init`. Say that the GitHub repository was not created.
 
 ## 3. Mark it
 
-Write `.book-writing` at the workspace root:
+Write `.long-form-content` at the workspace root:
 
 ```yaml
 created: <YYYY-MM-DD>
-template: danielrosehill/Claude-Book-Workspace-Template
-template_version: 1.0.0
+template: danielrosehill/Long-Form-Content-Workspace-Template
+template_version: 2.0
+type: <book | report | screenplay | audiobook>
 backing: github          # github | local
 repo: <owner>/<name>
 workspace_root: .
 ```
 
 Every other skill finds the workspace by searching the current directory and then
-upward for this file. Never assume the enclosing git repository is the workspace.
+upward for this file (or the pre-rename `.book-writing`; both are valid). Never assume the enclosing git repository is the workspace.
 
 ## 4. Make it this project's repository
+
+- Set `[output] type` in `longform.toml`.
 
 - Replace the template's `README.md` with a status page for this book.
 - Leave `CLAUDE.md` alone. It is the directive layer and it applies unchanged.
@@ -62,7 +66,7 @@ upward for this file. Never assume the enclosing git repository is the workspace
 
 ## 5. Then hand off
 
-Report the path and say that the next step is recording the brief — `/book-brief`,
+Report the path and say that the next step is recording the brief — `/lf-brief`,
 which records what the user wants without asking them anything.
 
 Do not begin the intake yourself, and do not start proposing chapters.

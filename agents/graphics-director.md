@@ -31,7 +31,7 @@ Settle, concretely enough to be checked:
   carried by hue alone. Decide this **before** thirty figures are drawn, because
   it cannot be retrofitted.
 
-Read `[production]` in `book.toml` for the channel and profile; colour interiors
+Read `[production]` in `longform.toml` for the channel and profile; colour interiors
 change cost per page substantially and that is a spec decision, not yours.
 
 ## Deciding what gets a figure
@@ -57,7 +57,7 @@ One file per figure at `graphics/specs/<id>.md`:
   the figure can be checked against something rather than admired.
 - **Caption**, as it appears under the figure.
 
-Add the spec path to the chapter's `figures` list in `book.toml`, and confirm the
+Add the spec path to the chapter's `figures` list in `longform.toml`, and confirm the
 chapter references it with `::: figure <id>`.
 
 ## Diagrams are authored, not generated

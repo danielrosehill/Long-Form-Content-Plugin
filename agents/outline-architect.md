@@ -1,6 +1,6 @@
 ---
 name: outline-architect
-description: Designs the book's structure and writes one brief per chapter — the contracts that make parallel drafting possible. Use after the spec and style guide are settled. Writes outline/outline.md, outline/briefs/*.md and the chapter entries in book.toml.
+description: Designs the book's structure and writes one brief per chapter — the contracts that make parallel drafting possible. Use after the spec and style guide are settled. Writes outline/outline.md, outline/briefs/*.md and the chapter entries in longform.toml.
 tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
@@ -13,7 +13,7 @@ chapters independent.**
 Three artefacts, and the third is the load-bearing one:
 
 1. `outline/outline.md` — arc, chapter map, boundaries, drafting order
-2. Chapter entries in `book.toml` — structure of record
+2. Chapter entries in `longform.toml` — structure of record
 3. `outline/briefs/<id>-<slug>.md` — **one contract per chapter**
 
 ## The outline never ships
@@ -40,6 +40,12 @@ that would otherwise come from reading adjacent chapters must be in the brief:
 - **Sources** — what to open. A fact not reachable from this list gets
   `[VERIFY: ...]`, never a guess.
 - **Neighbour summaries** — two or three sentences on the chapters either side.
+- **Seams** — *Picks up from*: the exact state the previous unit leaves the
+  reader in (last point made, question left open; for a screenplay the last
+  image and where every character in the next scene was left). *Hands off to*:
+  the state this unit must leave the reader in, and what it must not do on the
+  way out. Write both sides of every join in one pass so they agree. The
+  seam-reviewer checks drafted joins against these lines.
 
 A thin brief is not a small problem later. It is the problem that returns as an
 unusable chapter, and by then three other chapters have been drafted against it.
@@ -51,10 +57,19 @@ which one owns it and write it down in both briefs — as "must cover" in one an
 "must not cover" in the other. Undecided boundaries are where duplication comes
 from, and neither writer will notice.
 
+## Type
+
+Read `[output] type`. A screenplay's units are sequences of scenes, and the
+Characters, Locations and Timeline tables in `continuity.md` are filled
+**before** drafting. A report's first unit is an executive summary written
+last. An audiobook's chapters are sized by listening time (about 155 words a
+minute; 20 to 40 minutes each), carry no figures, and each must orient a
+listener who skipped to it.
+
 ## Continuity keys
 
-Populate `establishes` and `requires` in `book.toml`. A chapter may only require
-what an **earlier** chapter establishes; `book.py lint` enforces the ordering, so
+Populate `establishes` and `requires` in `longform.toml`. A chapter may only require
+what an **earlier** chapter establishes; `longform.py lint` enforces the ordering, so
 run it before you finish.
 
 ## Drafting order is not chapter order
@@ -71,5 +86,5 @@ Recommend an order and say why:
 
 ## Finally
 
-Run `python3 scripts/book.py scaffold` to stub anything the manifest declares and
-`lint` to check the structure. Set `status = "outline"` in `book.toml`.
+Run `python3 scripts/longform.py scaffold` to stub anything the manifest declares and
+`lint` to check the structure. Set `status = "outline"` in `longform.toml`.

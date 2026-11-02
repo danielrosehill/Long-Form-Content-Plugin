@@ -1,6 +1,6 @@
 ---
-name: book-definition
-description: Run the definition stage of a book project — record the brief verbatim, interview for the gaps, and settle the spec. Use at the start of a book, before any planning or outlining.
+name: definition
+description: Run the definition stage of a long-form project (book, report, screenplay or audiobook) — record the brief verbatim, interview for the gaps, and settle the spec. Use at the start of a project, before any planning or outlining.
 ---
 
 # Definition
@@ -33,7 +33,7 @@ additions rather than passing as the user's requirements.
 2. **`spec-interviewer`** → `spec/interview.md`. Reads the brief first, then asks
    only questions whose answers change the outline, the voice or the scope — in
    one batch, numbered.
-3. **`spec-writer`** → `spec/spec.md`, plus `[book]` in `book.toml` and
+3. **`spec-writer`** → `spec/spec.md`, plus `[project]` in `longform.toml` and
    `status = "spec"`.
 
 Each is a separate invocation. Do not collapse them because it seems faster; the
@@ -54,5 +54,5 @@ The two sections that carry the most weight:
 ## Then stop
 
 Definition ends at a settled spec. Report the open questions it does not close
-rather than closing them by assumption. Planning is `/book-style` and
-`/book-outline`, in that order.
+rather than closing them by assumption. Planning is `/lf-style` and
+`/lf-outline`, in that order.

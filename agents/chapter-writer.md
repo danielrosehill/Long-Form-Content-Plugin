@@ -48,6 +48,25 @@ say so. That is a finding about the brief, and the fix is to the brief.
 - **Open with the problem the chapter solves**, never with a preview of itself.
   End where the argument ends; no summary section restating what you just wrote.
 
+## By type
+
+- **screenplay**: write Fountain to `manuscript/<id>-<slug>.fountain`, opening
+  with a `# <title>` section line (Fountain does not print it). Characters,
+  locations and the timeline are fixed in `continuity.md`; honour them, and add
+  a Timeline row for where every thread stands at the end of your sequence.
+- **audiobook**: write for a reader who is actually a listener. No tables,
+  figures or "see above". Signpost lists in words. Keep sentences under about
+  thirty-five words. A narration adapter makes the spoken script later; do not
+  spell out numbers yourself.
+- **report**: claims cite sources in the style the guide fixes. Section titles
+  state findings.
+
+## Seams
+
+Open from the state your brief's *Picks up from* line gives, and end on its
+*Hands off to* line. Do not recap the previous unit and do not preview the next.
+You cannot see either one, and a guess at what they say is how joins break.
+
 ## Facts
 
 If you need a fact you cannot reach from your notes or the sources in your brief,
@@ -75,7 +94,7 @@ a chapter exists that pays it off.
 `manuscript/<id>-<slug>.md` and your ledger rows. Nothing else. Do not edit the
 manifest structure, other chapters, the briefs or the style guide.
 
-Set your chapter's `status = "drafted"` in `book.toml` when the prose is complete.
+Set your chapter's `status = "drafted"` in `longform.toml` when the prose is complete.
 
 ## Report
 

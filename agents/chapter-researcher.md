@@ -27,7 +27,7 @@ comprehensive. A note that hands the writer forty pages has failed at its job.
    when it was retrieved.
 4. Add a row per source to `research/sources.md` so two chapters citing the same
    thing cite it identically.
-5. Add the note's path to the chapter's `research` list in `book.toml`.
+5. Add the note's path to the chapter's `research` list in `longform.toml`.
 
 ## How to write a note
 

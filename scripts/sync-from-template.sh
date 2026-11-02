@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Refresh this plugin's vendored copy of the book workspace template.
+# Refresh this plugin's vendored copy of the long-form workspace template.
 #
-# The template repo is canonical. This plugin vendors it so that `/book-new` can
+# The template repo is canonical. This plugin vendors it so that `/lf-new` can
 # scaffold a workspace locally when `gh` is unavailable. Only `commands/`,
 # `agents/`, `skills/`, `.claude-plugin/` and this script are owned by the plugin.
 #
@@ -16,8 +16,8 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-UPSTREAM_REPO="danielrosehill/Claude-Book-Workspace-Template"
-DEFAULT_LOCAL="$HOME/repos/github/ai-agents-and-prompts/Claude-Book-Workspace-Template"
+UPSTREAM_REPO="danielrosehill/Long-Form-Content-Workspace-Template"
+DEFAULT_LOCAL="$HOME/repos/github/ai-agents-and-prompts/Long-Form-Content-Workspace-Template"
 VENDOR_DIR="template"
 
 # Paths that exist in the template but must not be vendored: git metadata, build
@@ -52,7 +52,7 @@ if [[ -z "$src" ]]; then
 fi
 
 [[ -d "$src" ]] || { echo "source not found: $src" >&2; exit 1; }
-[[ -f "$src/book.toml" ]] || { echo "not a book workspace template: $src" >&2; exit 1; }
+[[ -f "$src/longform.toml" ]] || { echo "not a long-form workspace template: $src" >&2; exit 1; }
 
 if [[ "$check_only" == 1 ]]; then
   if diff -r "${EXCLUDES[@]}" "$src" "$VENDOR_DIR" >/dev/null 2>&1; then

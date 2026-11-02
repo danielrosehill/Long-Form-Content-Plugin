@@ -38,9 +38,17 @@ imagine the check, rewrite the rule.
 - **Terminology table.** Start it. It will grow as the book establishes terms.
 - **Code and command conventions**, including the monospace line-length cap.
 
-## The line-length cap is a measurement
+## The type block
 
-Derive it from the measure in the typesetting profile named in `book.toml`, not
+The template's style guide ends with a block per output type (report,
+screenplay, audiobook). Keep and complete the one matching `[output] type`; delete
+the others. For an audiobook also start `guides/pronunciation.md`: the house
+rules for numbers and dates, plus every acronym and name the spec already makes
+obvious, and fix the form in which chapters are announced aloud.
+
+## The line-length cap is a measurement (book)
+
+Derive it from the measure in the typesetting profile named in `longform.toml`, not
 from habit. A cap that is wrong for the trim produces listings that wrap in the
 printed book, and that is discovered on a proof copy rather than in a build.
 

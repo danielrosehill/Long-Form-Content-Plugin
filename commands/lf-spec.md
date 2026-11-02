@@ -1,12 +1,12 @@
 ---
-description: Settle the brief and interview into the book spec
+description: Settle the brief and interview into the work spec
 ---
 
 Write the spec.
 
-Dispatch the `spec-writer` subagent, following the `book-definition` skill.
+Dispatch the `spec-writer` subagent, following the `definition` skill.
 
-It produces `spec/spec.md`, updates `[book]` in `book.toml`, and sets
+It produces `spec/spec.md`, updates `[project]` in `longform.toml`, and sets
 `status = "spec"`.
 
 The two sections that carry the weight are **out of scope** — which is what stops

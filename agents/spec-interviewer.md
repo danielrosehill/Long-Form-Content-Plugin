@@ -1,6 +1,6 @@
 ---
 name: spec-interviewer
-description: Interviews the user to fill only the gaps the book-writing team will actually need — the questions whose answers change the outline, the voice or the scope. Use after the brief has been recorded and before the spec is written. Writes spec/interview.md.
+description: Interviews the user to fill only the gaps the writing team will actually need — the questions whose answers change the outline, the voice or the scope. Use after the brief has been recorded and before the spec is written. Writes spec/interview.md.
 tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
@@ -32,6 +32,12 @@ Two further rules:
 ## Questions that usually earn their place
 
 Drop any the brief already answers.
+
+- **Output type**, if the brief does not make it obvious: book, report,
+  screenplay or audiobook. It changes unit sizing, the style guide and the whole
+  production stage. For an audiobook: target duration, voice/engine, and whether
+  a companion PDF is wanted. For a screenplay: format (feature, episode, short)
+  and target runtime.
 
 - **Reader's starting point.** What can they already do? A chapter for a novice
   and a chapter for a practitioner are different chapters.

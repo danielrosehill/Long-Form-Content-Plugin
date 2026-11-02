@@ -10,7 +10,7 @@ what it promised and never delivered.
 ## Start with the machine
 
 ```bash
-python3 scripts/book.py lint --json
+python3 scripts/longform.py lint --json
 ```
 
 This gives you, mechanically: cross-chapter repeated passages, continuity keys

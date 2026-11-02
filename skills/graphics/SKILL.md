@@ -1,6 +1,6 @@
 ---
-name: book-graphics
-description: Produce the book's figures — establish the graphics style guide, spec each figure, and generate them. Use after chapters are drafted, in parallel with review.
+name: graphics
+description: Produce the figures for a book or report (screenplays and audiobooks have none) — establish the graphics style guide, spec each figure, and generate them. Use after chapters are drafted, in parallel with review.
 ---
 
 # Graphics
@@ -26,7 +26,7 @@ guide + specs         sources + assets
 
 ## Decide greyscale before drawing
 
-Read `[production]` in `book.toml`. If the interior prints greyscale, no
+Read `[production]` in `longform.toml`. If the interior prints greyscale, no
 distinction may be carried by hue alone. This cannot be retrofitted across a set
 of finished figures, and colour interiors change cost per page substantially.
 
@@ -52,7 +52,7 @@ invented labels print. Every string appearing in a figure is written in its spec
 
 ## Checking
 
-`python3 scripts/book.py lint` fails on a `::: figure <id>` directive with no
+`python3 scripts/longform.py lint` fails on a `::: figure <id>` directive with no
 spec at `graphics/specs/<id>.md`.
 
 It cannot check that the figure shows what the spec describes. Look at each

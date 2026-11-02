@@ -2,11 +2,11 @@
 description: Design the structure and write one brief per chapter
 ---
 
-Design the book.
+Design the work.
 
-Dispatch the `outline-architect` subagent, following the `book-planning` skill.
+Dispatch the `outline-architect` subagent, following the `planning` skill.
 
-It produces `outline/outline.md`, the chapter entries in `book.toml`, and — the
+It produces `outline/outline.md`, the chapter entries in `longform.toml`, and — the
 load-bearing artefact — one brief per chapter in `outline/briefs/`.
 
 Three things to hold it to:
@@ -17,4 +17,4 @@ Three things to hold it to:
 - **Neighbour summaries** are present, because they are what a writer gets
   instead of reading the chapters either side.
 
-Then `python3 scripts/book.py scaffold && python3 scripts/book.py lint`.
+Then `python3 scripts/longform.py scaffold && python3 scripts/longform.py lint`.

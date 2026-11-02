@@ -1,14 +1,17 @@
 ---
-description: Assemble the manuscript and hand off to print geometry
+description: Production stage — assemble and hand off (book), export PDF (report, screenplay); audiobooks go to /lf-narrate and /lf-render
 ---
 
-Assemble the book.
+Assemble the work.
 
-Follow the `book-publication` skill.
+Follow the `publication` skill, which branches on `[output] type`. For a
+**report** or **screenplay**, run `longform.py export` after `assemble`. For an
+**audiobook**, `assemble` gives the text of record, and the audio comes from
+`/lf-narrate` then `/lf-render`. The rest of this command is the **book** path.
 
 ```bash
-python3 scripts/book.py lint --strict
-python3 scripts/book.py assemble
+python3 scripts/longform.py lint --strict
+python3 scripts/longform.py assemble
 ```
 
 `--strict` first and it is not optional — an unresolved `[VERIFY:]` marker in a

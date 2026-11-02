@@ -5,7 +5,7 @@ argument-hint: "[optional — chapter ids, or 'voice' / 'continuity' for a singl
 
 Review: $ARGUMENTS
 
-Follow the `book-review` skill.
+Follow the `review` skill.
 
 - `proofreader` — per chapter, parallelises freely
 - `voice-auditor` — samples across chapters for register drift

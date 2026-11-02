@@ -34,11 +34,11 @@ job — and the most common way to be too vague is to be agreeable about scope.
 
 Reference works are read for their facts. Settle explicitly: what will decay
 first, how fast, and whether it belongs in a printed book at all. Set
-`snapshot_date` in `book.toml`.
+`snapshot_date` in `longform.toml`.
 
 ## After writing
 
-Update `[book]` in `book.toml` — title, kind, audience, promise, word target — and
+Update `[project]` in `longform.toml` — title, kind, audience, promise, word target — and
 set `status = "spec"`.
 
 Report the open questions your spec does not close, plainly. A spec that claims

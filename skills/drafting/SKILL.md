@@ -1,6 +1,6 @@
 ---
-name: book-drafting
-description: Dispatch chapter-writing subagents in parallel batches to draft the book, and handle research where a chapter's sources are not yet gathered. Use once briefs exist. Enforces the batching rule that keeps parallel writers from colliding.
+name: drafting
+description: Dispatch unit-writing subagents (chapters, report sections, screenplay sequences) in parallel batches to draft the work, and handle research where a chapter's sources are not yet gathered. Use once briefs exist. Enforces the batching rule that keeps parallel writers from colliding.
 ---
 
 # Drafting
@@ -10,10 +10,10 @@ the orchestrator; you do not write chapters yourself.
 
 ## Before dispatching
 
-1. `python3 scripts/book.py lint` — a structural problem found now is cheap.
+1. `python3 scripts/longform.py lint` — a structural problem found now is cheap.
 2. Check each target chapter has a complete brief. A thin brief returns an
    unusable chapter, and by then other chapters have been drafted against it.
-3. Check `research` in `book.toml`. Where a chapter's sources are not gathered,
+3. Check `research` in `longform.toml`. Where a chapter's sources are not gathered,
    run **`chapter-researcher`** for it first. Research can run in parallel freely.
 
 ## The batching rule
@@ -48,13 +48,18 @@ Nothing else. Fan out freely on reading; keep writes disjoint.
 
 ## After each batch
 
-- `python3 scripts/book.py status`
-- `python3 scripts/book.py lint` — cross-chapter repetition, continuity ordering,
+- `python3 scripts/longform.py status`
+- `python3 scripts/longform.py lint` — cross-chapter repetition, continuity ordering,
   unresolved markers, figure references
 - **Read the returned chapters yourself.** A subagent's output is a report to be
   checked, not an established fact. Lint catches fabricated *paths*; it cannot
   catch a fabricated *claim* about something that does exist.
 - Collect every `[VERIFY:]` marker into `research/sources.md` under Unresolved.
+- **Cut and review the new seams.** `python3 scripts/longform.py seams`, then one
+  `seam-reviewer` per seam whose two sides are both drafted, in one message
+  (see the `review` skill). Do it per batch: a seam finding addressed to the
+  outline means a brief's boundary was wrong, and the undrafted briefs may share
+  the fault.
 
 ## When a writer pushes back
 
