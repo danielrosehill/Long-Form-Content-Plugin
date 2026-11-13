@@ -1,6 +1,6 @@
 {
   "name": "long-form-content",
-  "version": "2.0",
+  "version": "2.1",
   "description": "Claude Code plugin: produce long-form content (books, research reports, screenplays and audiobooks) with teams of subagents. Definition, planning, research, parallel unit drafting, review (including a seam reviewer for the joins between units), then a production stage per type: typeset-and-handoff, PDF export, Fountain, or spoken script, per-chapter TTS and a chaptered m4b. Organised so no single agent is ever given a task large enough to degrade. Successor to book-writing.",
   "author": {
     "name": "Daniel Rosehill",

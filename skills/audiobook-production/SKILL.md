@@ -27,7 +27,7 @@ touching anything else. Examples:
 
 ```toml
 render_cmd = "edge-tts --voice {voice} -f {input} --write-media {output}"
-render_cmd = "with-secrets python3 ~/tools/my_tts.py --voice {voice} {input} {output}"
+render_cmd = "python3 ~/tools/my_tts.py --voice {voice} {input} {output}"
 ```
 
 An engine that chunks internally (most long-text TTS does) belongs inside that
